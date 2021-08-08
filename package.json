@@ -1,5 +1,5 @@
 {
-  "name": "gifcanvas",
+  "name": "@flexice/gifcanvas",
   "version": "1.0.0",
   "description": "Creating GIF Images Using Canvas",
   "main": "dist/gifcanvas.js",

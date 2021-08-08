@@ -16,8 +16,8 @@ export class GifCanvas {
 
     addFrame(fn : (ctx : NodeCanvasRenderingContext2D) => void) : this {
         const ctx = this.canvas.getContext('2d');
-        ctx.fillStyle = '#ffffff'
-        ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
+        // ctx.fillStyle = '#ffffff'
+        // ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
         fn(ctx);
         this.encoder.addFrame(ctx);
         return this;

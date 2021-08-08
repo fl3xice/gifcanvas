@@ -1,6 +1,6 @@
 {
   "name": "gif-gifcanvas",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Creating GIF Images Using Canvas",
   "main": "dist/gifcanvas.js",
   "types": "dist/gifcanvas.d.ts",

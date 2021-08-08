@@ -1,2 +1,3 @@
-# gifcanvas
+# GifCanvas
 Gif Canvas creator
+

@@ -1,9 +1,9 @@
 # GifCanvas
 Gif Canvas creator
 
-![npm](https://img.shields.io/npm/v/gif-gifcanvas)
-![node-current](https://img.shields.io/node/v/gif-gifcanvas)
-![GitHub Repo stars](https://img.shields.io/github/stars/fl3xice/gifcanvas)
+[![npm](https://img.shields.io/npm/v/gif-gifcanvas)](https://www.npmjs.com/package/gif-gifcanvas)
+[![node-current](https://img.shields.io/node/v/gif-gifcanvas)](https://nodejs.org/en/)
+[![GitHub Repo stars](https://img.shields.io/github/stars/fl3xice/gifcanvas)](https://github.com/fl3xice/gifcanvas)
 
 How to install
 ```

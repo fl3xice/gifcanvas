@@ -6,6 +6,8 @@ export class GifCanvas {
     private encoder;
     private readonly context: NodeCanvasRenderingContext2D;
 
+    public countFrames : number = 0;
+
     constructor(canvas : Canvas, options? : { delay: number, fps: number, repeat: number }) {
         this.canvas = canvas;
         this.encoder = new GIFEncoder(this.canvas.width, this.canvas.height);
@@ -28,7 +30,7 @@ export class GifCanvas {
     animation(framesCount: number, fn: (ctx: NodeCanvasRenderingContext2D, nowFrame: number) => void) : this {
         for (let frame = 0; frame < framesCount; frame++) {
             fn(this.context, frame);
-            this.encoder.addFrame(this.context);
+            this.oneFrame(this.context)
         }
 
         return this;
@@ -36,8 +38,13 @@ export class GifCanvas {
 
     addFrame(fn : (ctx : NodeCanvasRenderingContext2D) => void) : this {
         fn(this.context);
-        this.encoder.addFrame(this.context);
+        this.oneFrame(this.context);
         return this;
+    }
+
+    private oneFrame(ctx: NodeCanvasRenderingContext2D) : void {
+        this.encoder.addFrame(ctx);
+        this.countFrames++;
     }
 
     end() : Buffer {

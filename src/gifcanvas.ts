@@ -5,19 +5,25 @@ export class GifCanvas {
     public canvas : Canvas;
     private encoder;
 
-    constructor(canvas : Canvas, delay : number = 500, fps : number = 60, repeat : number = 0) {
+    constructor(canvas : Canvas, options? : { delay: number, fps: number, repeat: number }) {
         this.canvas = canvas;
         this.encoder = new GIFEncoder(this.canvas.width, this.canvas.height);
-        this.encoder.setDelay(delay);
-        this.encoder.setFrameRate(fps);
-        this.encoder.setRepeat(repeat)
+
+        if (options) {
+            this.encoder.setDelay(options.delay || 0);
+            this.encoder.setFrameRate(options.fps || 60);
+            this.encoder.setRepeat(options.repeat || 0);
+        } else {
+            this.encoder.setDelay(0);
+            this.encoder.setFrameRate(60);
+            this.encoder.setRepeat(0);
+        }
+
         this.encoder.start();
     }
 
     addFrame(fn : (ctx : NodeCanvasRenderingContext2D) => void) : this {
         const ctx = this.canvas.getContext('2d');
-        // ctx.fillStyle = '#ffffff'
-        // ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
         fn(ctx);
         this.encoder.addFrame(ctx);
         return this;

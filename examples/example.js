@@ -4,7 +4,7 @@ const { writeFile } = require('fs')
 const path = require("path");
 
 const canvas = createCanvas(250, 250);
-const gifcanvas = new GifCanvas(canvas, 0, 60, 0);
+const gifcanvas = new GifCanvas(canvas);
 
 for (let i = 0; i < gifcanvas.canvas.width - 50; i+=3) {
     gifcanvas.addFrame(ctx => {

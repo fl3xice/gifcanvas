@@ -1,15 +1,30 @@
 # GifCanvas
 Gif Canvas creator
 
+Constructor
+------------
+
+| Param | Type | Default |
+|---|---|---|
+| canvas | `Canvas` |
+| options? | delay: `number`<br/> fps: `number`<br/> repeat: `number` | 0,60,0 |
+
+| Method | Returns |
+| --- | --- |
+| addFrame() | `GifCanvas` |
+| end() | `Buffer` |
+
 Example
+------------
+![Example gif](./examples/example.gif)
 ```js
-const { GifCanvas } = require('../dist/gifcanvas');
+const { GifCanvas } = require('gif-gifcanvas');
 const { createCanvas } = require("canvas");
 const { writeFile } = require('fs')
 const path = require("path");
 
 const canvas = createCanvas(250, 250);
-const gifcanvas = new GifCanvas(canvas, 0, 60, 0);
+const gifcanvas = new GifCanvas(canvas);
 
 for (let i = 0; i < gifcanvas.canvas.width - 50; i+=3) {
     gifcanvas.addFrame(ctx => {

@@ -5,6 +5,14 @@ Gif Canvas creator
 ![node-current](https://img.shields.io/node/v/gif-gifcanvas)
 ![GitHub Repo stars](https://img.shields.io/github/stars/fl3xice/gifcanvas)
 
+How to install
+```
+npm i gif-gifcanvas
+```
+```
+yarn add gif-gifcanvas
+```
+
 Constructor
 ------------
 

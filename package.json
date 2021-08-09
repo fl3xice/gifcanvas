@@ -1,6 +1,6 @@
 {
   "name": "gif-gifcanvas",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Creating GIF Images Using Canvas",
   "main": "dist/gifcanvas.js",
   "types": "dist/gifcanvas.d.ts",
@@ -30,6 +30,9 @@
     "node-canvas",
     "canva"
   ],
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "devDependencies": {
     "@types/node": "^16.4.13",
     "typescript": "^4.3.5"

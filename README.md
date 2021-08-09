@@ -25,6 +25,7 @@ Constructor
 | --- | --- |
 | addFrame() | `GifCanvas` |
 | end() | `Buffer` |
+| animation() | `GifCanvas` |
 
 Example
 ------------

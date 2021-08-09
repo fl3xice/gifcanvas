@@ -6,7 +6,7 @@ const path = require("path");
 const canvas = createCanvas(250, 250);
 const gifcanvas = new GifCanvas(canvas);
 
-for (let i = 0; i < gifcanvas.canvas.width - 50; i+=3) {
+for (let i = 0; i < gifcanvas.canvas.width - 50; i+=4) {
     gifcanvas.addFrame(ctx => {
         ctx.fillStyle = '#050505';
         ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
@@ -15,7 +15,7 @@ for (let i = 0; i < gifcanvas.canvas.width - 50; i+=3) {
     });
 }
 
-for (let i = 0; i < gifcanvas.canvas.height - 50; i+=3) {
+for (let i = 0; i < gifcanvas.canvas.height - 50; i+=4) {
     gifcanvas.addFrame(ctx => {
         ctx.fillStyle = '#050505';
         ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
@@ -24,7 +24,7 @@ for (let i = 0; i < gifcanvas.canvas.height - 50; i+=3) {
     });
 }
 
-for (let i = 200; i > 0; i-=3) {
+for (let i = 200; i > 0; i-=4) {
     gifcanvas.addFrame(ctx => {
         ctx.fillStyle = '#050505';
         ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
@@ -33,7 +33,7 @@ for (let i = 200; i > 0; i-=3) {
     });
 }
 
-for (let i = 200; i > 0; i-=3) {
+for (let i = 200; i > 0; i-=4) {
     gifcanvas.addFrame(ctx => {
         ctx.fillStyle = '#050505';
         ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);

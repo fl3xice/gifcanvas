@@ -4,6 +4,7 @@ const GIFEncoder = require('gif-encoder-2')
 export class GifCanvas {
     public canvas : Canvas;
     private encoder;
+    private readonly context: NodeCanvasRenderingContext2D;
 
     constructor(canvas : Canvas, options? : { delay: number, fps: number, repeat: number }) {
         this.canvas = canvas;
@@ -19,13 +20,23 @@ export class GifCanvas {
             this.encoder.setRepeat(0);
         }
 
+        this.context = this.canvas.getContext('2d');
+
         this.encoder.start();
     }
 
+    animation(framesCount: number, fn: (ctx: NodeCanvasRenderingContext2D, nowFrame: number) => void) : this {
+        for (let frame = 0; frame < framesCount; frame++) {
+            fn(this.context, frame);
+            this.encoder.addFrame(this.context);
+        }
+
+        return this;
+    }
+
     addFrame(fn : (ctx : NodeCanvasRenderingContext2D) => void) : this {
-        const ctx = this.canvas.getContext('2d');
-        fn(ctx);
-        this.encoder.addFrame(ctx);
+        fn(this.context);
+        this.encoder.addFrame(this.context);
         return this;
     }
 
